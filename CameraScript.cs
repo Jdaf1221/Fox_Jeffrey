@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraScript : MonoBehaviour
 {
@@ -16,6 +18,14 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        this.transform.position = new Vector3(target.transform.position.x, this.transform.position.y, this.transform.position.z);
+        transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 }
